@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class SharkBehavior : MonoBehaviour
 {
+    [Header("Detection Area")]
     public float smallSphereRadius = 5f;  // Radius of the smaller spherecast
     public float largeSphereRadius = 12f; // Radius of the larger spherecast
     public LayerMask layerMask;           // Layer mask to filter the objects the spherecast will detect
 
+    [Header("Choose 1 (Random Patrol or Fixed)")]
+
+    public bool RandomPatrol = false;
+    public bool FixedPatrol = true;
+
+    [Header("Random Patrol")]
     public float minMoveDuration = 5f;
     public float maxMoveDuration = 6f;
+
+    [Header("Fixed Patrol")]
+    public float horizontalBound = 5f;
+
+    [Header("Chase/Attack")]
+
     public float chaseCooldown = 2f;
 
     private float chosenMoveDuration;
     private float aggroDuration;
     private float aggroCooldown;
 
+    [Header("Speed")]
 
     public float speedPatrol = 0.5f;
     public float speedAggro = 3f;
+
+    [Header("Check if player is detected")]
 
     public bool playerDetected;
     private Rigidbody2D rb2d;
@@ -26,10 +42,17 @@ public class SharkBehavior : MonoBehaviour
     private SpriteRenderer sprite;
     private Vector2 currentPlayerPos;
 
+    private bool FixedMoveLeft = true;
+    private float initialPosition;
+    private Vector2 initialSharkPos;
+    private bool BackToOriginalPos = true;
+
     private bool isChaseCooldown;
 
     void Start()
     {
+        initialSharkPos = transform.position;
+        initialPosition = transform.position.x;
         sprite = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -38,7 +61,21 @@ public class SharkBehavior : MonoBehaviour
     {
         DetectPlayer();
 
-        Countdown();
+        if (RandomPatrol)
+        {
+            Countdown();
+        }
+
+        if (FixedPatrol && BackToOriginalPos && !playerDetected)
+        {
+            FixedPatrolHorizontal();
+            RotateShark();
+        }else if (FixedPatrol && !BackToOriginalPos && !playerDetected)
+        {
+            GoBackAfterChase();
+            RotateShark();
+        }
+
         AggroDuration();
 
         if (!playerDetected)
@@ -46,6 +83,7 @@ public class SharkBehavior : MonoBehaviour
             rb2d.velocity = currentDirection * speedPatrol;
         }else if (playerDetected)
         {
+            BackToOriginalPos = false;
             int onCooldown;
             if (isChaseCooldown)
             {
@@ -67,7 +105,6 @@ public class SharkBehavior : MonoBehaviour
 
             if (chosenMoveDuration < 0f)
             {
-                Debug.Log("Change Direction!");
                 currentDirection = RandomAngle();
                 RandomDurationChoose();
                 RotateShark();
@@ -76,6 +113,36 @@ public class SharkBehavior : MonoBehaviour
         else
         {
             chosenMoveDuration = -1f;
+        }
+    }
+
+    void FixedPatrolHorizontal()
+    {
+        if(FixedMoveLeft)
+        {
+            currentDirection = new Vector2(-1, 0);
+        }
+        else
+        {
+            currentDirection = new Vector2(1, 0);
+        }
+
+        if(transform.position.x < initialPosition - horizontalBound)
+        {
+            FixedMoveLeft = false;
+        }else if(transform.position.x > initialPosition + horizontalBound)
+        {
+            FixedMoveLeft = true;
+        }
+    }
+
+    void GoBackAfterChase()
+    {
+        currentDirection = (initialSharkPos - (Vector2)transform.position).normalized;
+        float distance = Vector3.Distance(initialSharkPos, transform.position);
+        if(distance < 0.01f)
+        {
+            BackToOriginalPos = true;
         }
     }
 
