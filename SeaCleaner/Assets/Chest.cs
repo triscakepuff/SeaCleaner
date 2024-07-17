@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {   
-    public GameObject gameManager;
     private GameObject targetObject;
 
     private int randomValue;
     void Update()
     {
-        Debug.Log(randomValue);
+       
         if(targetObject != null && Input.GetKeyDown(KeyCode.Space))
         {
            randomValue = Random.Range(0,2);
+          
         }
         if(randomValue == 1)
         {
