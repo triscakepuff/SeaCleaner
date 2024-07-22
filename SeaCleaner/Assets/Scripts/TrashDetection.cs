@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TrashDetection : MonoBehaviour
 {
-    public bool withinRange;
     public GameObject gameManager;
     private GameObject targetObject;
     void Update()

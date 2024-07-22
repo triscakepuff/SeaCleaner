@@ -18,4 +18,9 @@ public class GameManager : MonoBehaviour
         trashesObtained++;
         trashesObtainedText.GetComponent<TextMeshProUGUI>().text = trashesObtained.ToString();
     }
+
+    public void Respawn()
+    {
+        
+    }
 }
