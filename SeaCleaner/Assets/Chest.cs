@@ -7,12 +7,20 @@ public class Chest : MonoBehaviour
     private GameObject targetObject;
 
     private int randomValue;
+
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     void Update()
     {
        
         if(targetObject != null && Input.GetKeyDown(KeyCode.Space))
         {
            randomValue = Random.Range(0,2);
+           anim.SetTrigger("Opened");
           
         }
         if(randomValue == 1)
