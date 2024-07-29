@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shork_0: 2550877981289633111
+      shork_1: 9114934574683928332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

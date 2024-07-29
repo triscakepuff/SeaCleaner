@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      speed boost sprite_0: -733112340393880372
+      speed boost sprite_1: 5833201406473422516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

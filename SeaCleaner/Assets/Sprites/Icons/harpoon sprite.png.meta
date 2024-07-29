@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      harpoon sprite_0: 5908774176389111499
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

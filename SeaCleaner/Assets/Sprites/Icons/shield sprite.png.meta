@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shield sprite_0: -5014317639074671907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

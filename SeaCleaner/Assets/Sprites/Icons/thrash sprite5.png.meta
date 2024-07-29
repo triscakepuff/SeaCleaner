@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thrash sprite5_0: -4638909386827579408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

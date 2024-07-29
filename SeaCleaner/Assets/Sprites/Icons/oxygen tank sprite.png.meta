@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      oxygen tank sprite_0: 5047369932603436411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

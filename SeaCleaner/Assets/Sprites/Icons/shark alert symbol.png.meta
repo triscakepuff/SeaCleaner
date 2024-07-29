@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shark alert symbol_0: 8945635222171687244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
