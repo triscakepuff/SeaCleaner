@@ -14,11 +14,12 @@ public class OxygenBar : MonoBehaviour
     [Header("you can also call RestoreOxygen(*amount of oxygen restored*)")]
     public float oxygenRestoration = 100f;
 
-    private Slider bar;
+    public Image bar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        bar = GetComponent<Slider>();
+        bar = GetComponent<Image>();
+        bar.fillMethod = Image.FillMethod.Horizontal;
         currentOxygen = maxOxygen;
     }
 
@@ -31,7 +32,7 @@ public class OxygenBar : MonoBehaviour
         }
 
         currentOxygen = currentOxygen - (oxygenReduceRate * Time.deltaTime);
-        bar.value = currentOxygen / maxOxygen;
+        bar.fillAmount = currentOxygen / maxOxygen;
 
         if(currentOxygen <= 0)
         {

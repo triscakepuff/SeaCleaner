@@ -36,7 +36,7 @@ public class SharkBehavior : MonoBehaviour
 
     [Header("Check if player is detected")]
 
-    public bool playerDetected;
+    public bool playerDetected = false;
     private Rigidbody2D rb2d;
     private Vector2 currentDirection;
     private SpriteRenderer sprite;
@@ -48,9 +48,14 @@ public class SharkBehavior : MonoBehaviour
     private bool BackToOriginalPos = true;
 
     private bool isChaseCooldown;
+   
+    private float sizeX;
+    private float sizeY;
 
     void Start()
     {
+        sizeY = transform.localScale.y;
+        sizeX = transform.localScale.x;
         initialSharkPos = transform.position;
         initialPosition = transform.position.x;
         sprite = GetComponent<SpriteRenderer>();
@@ -197,13 +202,11 @@ public class SharkBehavior : MonoBehaviour
         // Update sprite flipping and rotation based on movement direction
         if (DirToRotate.x > 0) // Moving right
         {
-            sprite.flipX = true; // No flip along X-axis
-            sprite.flipY = false; // Flip along Y-axis
+            transform.localScale = new Vector3(-sizeX, sizeY);
         }
         else if (DirToRotate.x < 0) // Moving left
         {
-            sprite.flipX = true; // No flip along X-axis
-            sprite.flipY = true; // Flip along Y-axis
+            transform.localScale = new Vector3(-sizeX, -sizeY);
         }
 
         // Rotate the shark towards the movement direction
@@ -248,13 +251,11 @@ public class SharkBehavior : MonoBehaviour
         // Update sprite flipping and rotation based on movement direction
         if (currentDirection.x > 0) // Moving right
         {
-            sprite.flipX = true; // No flip along X-axis
-            sprite.flipY = false; // Flip along Y-axis
+            transform.localScale = new Vector3(-sizeX, sizeY);
         }
         else if (currentDirection.x < 0) // Moving left
         {
-            sprite.flipX = true; // No flip along X-axis
-            sprite.flipY = true; // Flip along Y-axis
+            transform.localScale = new Vector3(-sizeX, -sizeY);
         }
 
         // Rotate the shark towards the movement direction
@@ -264,24 +265,38 @@ public class SharkBehavior : MonoBehaviour
 
     void DetectPlayer()
     {
-        // Perform the smaller spherecast
-        RaycastHit2D smallHit = Physics2D.CircleCast(transform.position, smallSphereRadius, Vector2.zero, 0f, layerMask);
+        // Perform the smaller overlap circle
+        Collider2D[] smallHits = Physics2D.OverlapCircleAll(transform.position, smallSphereRadius, layerMask);
 
-        // Perform the larger spherecast
-        RaycastHit2D largeHit = Physics2D.CircleCast(transform.position, largeSphereRadius, Vector2.zero, 0f, layerMask);
+        // Perform the larger overlap circle
+        Collider2D[] largeHits = Physics2D.OverlapCircleAll(transform.position, largeSphereRadius, layerMask);
 
         if (!playerDetected)
         {
-            // Check if the small spherecast hit an object with the "Player" tag
-            if (smallHit.collider != null && smallHit.collider.CompareTag("Player"))
+            // Check if the small overlap circle hit an object with the "Player" tag
+            foreach (var hit in smallHits)
             {
-                playerDetected = true;
+                if (hit.CompareTag("Player"))
+                {
+                    playerDetected = true;
+                    break;
+                }
             }
         }
         else
         {
-            // Check if the large spherecast did not hit an object with the "Player" tag
-            if (largeHit.collider == null || !largeHit.collider.CompareTag("Player"))
+            // Check if the large overlap circle did not hit an object with the "Player" tag
+            bool playerStillInLargeSphere = false;
+            foreach (var hit in largeHits)
+            {
+                if (hit.CompareTag("Player"))
+                {
+                    playerStillInLargeSphere = true;
+                    break;
+                }
+            }
+
+            if (!playerStillInLargeSphere)
             {
                 playerDetected = false;
             }
