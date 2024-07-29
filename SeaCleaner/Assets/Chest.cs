@@ -46,7 +46,7 @@ public class Chest : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            targetObject = other.gameObject;
+            targetObject = null;
         }
     }
 }

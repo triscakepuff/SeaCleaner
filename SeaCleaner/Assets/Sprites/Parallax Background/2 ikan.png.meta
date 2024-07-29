@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: 4670132574628404eb55b2a867215a27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6544491559759304947
+    second: 2 ikan_0
+  - first:
+      213: -2683013293947553942
+    second: 2 ikan_1
+  - first:
+      213: -3518655841489022326
+    second: 2 ikan_2
+  - first:
+      213: -5290137270425570688
+    second: 2 ikan_3
+  - first:
+      213: -991667351078696374
+    second: 2 ikan_4
+  - first:
+      213: 237636948831321745
+    second: 2 ikan_5
+  - first:
+      213: 621084577993098272
+    second: 2 ikan_6
+  - first:
+      213: -4937259477427663377
+    second: 2 ikan_7
+  - first:
+      213: -5856760170235224006
+    second: 2 ikan_8
+  - first:
+      213: -3307128152814717474
+    second: 2 ikan_9
+  - first:
+      213: -5050421136165675331
+    second: 2 ikan_10
+  - first:
+      213: -1492320137437642894
+    second: 2 ikan_11
+  - first:
+      213: -7498090792565254196
+    second: 2 ikan_12
+  - first:
+      213: 7583498398446318654
+    second: 2 ikan_13
+  - first:
+      213: 3193044029930752383
+    second: 2 ikan_14
+  - first:
+      213: 2889157824278940795
+    second: 2 ikan_15
+  - first:
+      213: 1835688546521065533
+    second: 2 ikan_16
+  - first:
+      213: -6720024360633240789
+    second: 2 ikan_17
+  - first:
+      213: 657366827968690029
+    second: 2 ikan_18
+  - first:
+      213: 1166844867089355768
+    second: 2 ikan_19
+  - first:
+      213: 6139017777976048992
+    second: 2 ikan_20
+  - first:
+      213: 5456779968815368623
+    second: 2 ikan_21
+  - first:
+      213: -1118822311287832255
+    second: 2 ikan_22
+  - first:
+      213: -8205926294185747777
+    second: 2 ikan_23
+  - first:
+      213: -2693731147493921673
+    second: 2 ikan_24
+  - first:
+      213: -2385225542067727162
+    second: 2 ikan_25
+  - first:
+      213: 5431255787428070161
+    second: 2 ikan_26
+  - first:
+      213: 8975782436915889769
+    second: 2 ikan_27
+  - first:
+      213: -5557084047576885092
+    second: 2 ikan_28
+  - first:
+      213: 8884685523811174143
+    second: 2 ikan_29
+  - first:
+      213: 8906381337381125181
+    second: 2 ikan_30
+  - first:
+      213: 7874087302487262034
+    second: 2 ikan_31
+  - first:
+      213: -9220831087161545457
+    second: 2 ikan_32
+  - first:
+      213: -4161048898831229715
+    second: 2 ikan_33
+  - first:
+      213: 5734521541689828576
+    second: 2 ikan_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2 ikan_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d072101c99b4d25a0800000000000000
+      internalID: -6544491559759304947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: db13da699d69fe843a385fa4be313909
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      2 ikan_0: -6544491559759304947
+      2 ikan_1: -2683013293947553942
+      2 ikan_10: -5050421136165675331
+      2 ikan_11: -1492320137437642894
+      2 ikan_12: -7498090792565254196
+      2 ikan_13: 7583498398446318654
+      2 ikan_14: 3193044029930752383
+      2 ikan_15: 2889157824278940795
+      2 ikan_16: 1835688546521065533
+      2 ikan_17: -6720024360633240789
+      2 ikan_18: 657366827968690029
+      2 ikan_19: 1166844867089355768
+      2 ikan_2: -3518655841489022326
+      2 ikan_20: 6139017777976048992
+      2 ikan_21: 5456779968815368623
+      2 ikan_22: -1118822311287832255
+      2 ikan_23: -8205926294185747777
+      2 ikan_24: -2693731147493921673
+      2 ikan_25: -2385225542067727162
+      2 ikan_26: 5431255787428070161
+      2 ikan_27: 8975782436915889769
+      2 ikan_28: -5557084047576885092
+      2 ikan_29: 8884685523811174143
+      2 ikan_3: -5290137270425570688
+      2 ikan_30: 8906381337381125181
+      2 ikan_31: 7874087302487262034
+      2 ikan_32: -9220831087161545457
+      2 ikan_33: -4161048898831229715
+      2 ikan_34: 5734521541689828576
+      2 ikan_35: 1883781930
+      2 ikan_4: -991667351078696374
+      2 ikan_5: 237636948831321745
+      2 ikan_6: 621084577993098272
+      2 ikan_7: -4937259477427663377
+      2 ikan_8: -5856760170235224006
+      2 ikan_9: -3307128152814717474
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
