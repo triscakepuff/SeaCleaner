@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class OxygenBar : MonoBehaviour
 {
+    public GameObject character;
     [Header("Place this script on a Slider component,")]
     [Header("disable interactable, and remove handle")]
 
@@ -46,6 +47,7 @@ public class OxygenBar : MonoBehaviour
         if(currentOxygen <= 0)
         {
             Debug.Log("Oxygen is out");
+           character.SendMessage("Death");
         }
     }
 
