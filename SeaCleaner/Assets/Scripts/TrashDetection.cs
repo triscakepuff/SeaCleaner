@@ -21,6 +21,7 @@ public class TrashDetection : MonoBehaviour
         if(targetObject != null && Input.GetKeyDown(KeyCode.Space))
         {
             gameManager.SendMessage("TrashCount");
+            FindObjectOfType<AudioManager>().Play("Trash Interact");
             Destroy(gameObject);
         }
 

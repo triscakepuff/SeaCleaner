@@ -17,10 +17,12 @@ public class GameManager : MonoBehaviour
     {
         trashesObtained++;
         trashesObtainedText.GetComponent<TextMeshProUGUI>().text = trashesObtained.ToString();
+        FindObjectOfType<AudioManager>().Play("Trash Interact");
     }
 
-    public void Respawn()
+    void BombExplode()
     {
-        
+        FindObjectOfType<AudioManager>().Play("Bomb Explosion");
     }
+
 }

@@ -5,11 +5,15 @@ using UnityEngine;
 public class BombDetectionArea : MonoBehaviour
 {
     public GameObject character;
+    public GameObject gameManager;
+    public GameObject bomb;
     public float explosionDelay = 3.0f; // Time in seconds before the bomb explodes
     public float detectionRadius = 5.0f; // Radius within which the player triggers the bomb
 
     private bool playerInRange = false;
+    private bool hasWalkedThrough = false;
     private float countdown;
+    private Animator targetAnimator;
 
     void Start()
     {
@@ -19,11 +23,12 @@ public class BombDetectionArea : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange)
+        if (playerInRange || hasWalkedThrough)
         {
             countdown -= Time.deltaTime;
             if (countdown <= 0)
             {
+
                 Explode();
             }
         }
@@ -34,6 +39,7 @@ public class BombDetectionArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            hasWalkedThrough = true;
         }
     }
 
@@ -42,15 +48,16 @@ public class BombDetectionArea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            countdown = explosionDelay; // Reset countdown if player leaves the range
         }
     }
 
     void Explode()
     {
         // Add explosion effects here (e.g., particle system, sound, damage to player, etc.)
+        gameManager.SendMessage("BombExplode");
         Debug.Log("Boom!");
-        Destroy(gameObject); // Destroy the bomb object after exploding
-        character.SendMessage("Death");
+        targetAnimator = bomb.GetComponent<Animator>();
+        targetAnimator.SetTrigger("Explode");
+        if(playerInRange) character.SendMessage("Death");
     }
 }
