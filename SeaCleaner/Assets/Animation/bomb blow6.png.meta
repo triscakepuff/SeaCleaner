@@ -418,7 +418,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bomb blow6_0: 3364561431494895211
+      bomb blow6_1: -1976561880577518950
+      bomb blow6_10: -7595385379439407150
+      bomb blow6_11: 2468771031438739654
+      bomb blow6_12: 6482254674818399790
+      bomb blow6_2: 6198482106946874096
+      bomb blow6_3: -3399880330274032709
+      bomb blow6_4: -7158885594372972155
+      bomb blow6_5: -1343298182156415584
+      bomb blow6_6: 7858975047940971603
+      bomb blow6_7: 2748195890793128820
+      bomb blow6_8: -7281648151615509819
+      bomb blow6_9: -2029955162556918354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

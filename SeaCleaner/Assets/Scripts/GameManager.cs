@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     void BombExplode()
     {
         FindObjectOfType<AudioManager>().Play("Bomb Explosion");
+
     }
 
 }

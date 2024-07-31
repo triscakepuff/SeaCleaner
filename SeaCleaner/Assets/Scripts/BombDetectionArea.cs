@@ -15,6 +15,7 @@ public class BombDetectionArea : MonoBehaviour
     private float countdown;
     private Animator targetAnimator;
 
+    private bool Exploded = false;
     void Start()
     {
         countdown = explosionDelay;
@@ -26,9 +27,9 @@ public class BombDetectionArea : MonoBehaviour
         if (playerInRange || hasWalkedThrough)
         {
             countdown -= Time.deltaTime;
-            if (countdown <= 0)
+            if (countdown <= 0 && !Exploded)
             {
-
+                Exploded = true;
                 Explode();
             }
         }
@@ -56,6 +57,7 @@ public class BombDetectionArea : MonoBehaviour
         // Add explosion effects here (e.g., particle system, sound, damage to player, etc.)
         gameManager.SendMessage("BombExplode");
         Debug.Log("Boom!");
+        
         targetAnimator = bomb.GetComponent<Animator>();
         targetAnimator.SetTrigger("Explode");
         if(playerInRange) character.SendMessage("Death");

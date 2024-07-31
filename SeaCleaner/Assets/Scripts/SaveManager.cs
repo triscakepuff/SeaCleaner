@@ -13,9 +13,9 @@ public class GameData
 
     //Shop items
     public int UpgradeSlot = 0; //max 3
-    public int UpgradeSpeed = 0; //max 3
+    public int UpgradeSpeed = 1; //max 3
     public int UpgradeArrow = 0; //max 3
-    public int UpgradeShield = 0; //max 3
+    public int UpgradeShield = 1; //max 3
     public int UpgradeOxygen = 0; //max 5
 }
 

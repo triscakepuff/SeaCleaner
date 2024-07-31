@@ -21,14 +21,16 @@ public class Harpoon : MonoBehaviour
 
     public GameObject Crosshair;
 
+    private InventorySystem inventorySystem;
+
     private void Start()
     {
+        inventorySystem = GameObject.FindFirstObjectByType<InventorySystem>();
         animator = GetComponent<Animator>();
         Crosshair.SetActive(false);
     }
     void Update()
     {
-        //JUST FOR TEST
         CheckClickH();
 
         if (HarpoonActive)
@@ -48,8 +50,9 @@ public class Harpoon : MonoBehaviour
             shootPoint.transform.position = CrosshairPos;
 
 
-            if (Input.GetMouseButtonDown(0) && !isProjectileActive)
+            if (Input.GetMouseButtonDown(0) && !isProjectileActive && inventorySystem.inventoryItemCount[0]>0)
             {
+                inventorySystem.inventoryItemCount[0]--;
                 ShootProjectile(shootPoint.transform.position);
             }
         }
@@ -68,12 +71,13 @@ public class Harpoon : MonoBehaviour
 
     void CheckClickH()
     {
-        if (Input.GetKeyUp(KeyCode.H) && HarpoonActive)
+        if(inventorySystem.inventorySelect == 1)
+        {
+            HarpoonActive = true;
+        }
+        else
         {
             HarpoonActive = false;
-        }else if(Input.GetKeyUp(KeyCode.H) && !HarpoonActive)
-        {
-            HarpoonActive = true; 
         }
     }
 

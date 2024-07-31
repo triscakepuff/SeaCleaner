@@ -27,9 +27,12 @@ public class Character : MonoBehaviour
     public float offsetX;
     public float offsetY;
 
+    private PowerUpManager powerUpManager;
     // Start is called before the first frame update
     void Start()
     {
+        powerUpManager = GameObject.FindFirstObjectByType<PowerUpManager>();
+
         HarpoonArmSprite = HarpoonArm.GetComponent<SpriteRenderer>();
         harpoonScript = GetComponent<Harpoon>();
         HarpoonArmX = HarpoonArm.transform.localPosition.x;
@@ -114,7 +117,18 @@ public class Character : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Calculate movement
-        Vector2 movement = new Vector2(moveHorizontal * swimSpeed, moveVertical * swimSpeed);
+        Vector2 movement;
+
+        if (powerUpManager.speedActive)
+        {
+            movement = new Vector2(moveHorizontal * swimSpeed * 1.5f, moveVertical * swimSpeed * 1.5f);
+        }
+        else
+        {
+            movement = new Vector2(moveHorizontal * swimSpeed, moveVertical * swimSpeed);
+        }
+
+        
 
         rb.drag = waterDrag;
         rb.velocity = movement;
