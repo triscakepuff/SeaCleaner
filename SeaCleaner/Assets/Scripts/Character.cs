@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     public GameObject gameManager;
 
-    private Vector2 startingPosition;
+    public Vector2 startingPosition;
     private float time;
     private bool isDead = false;
 

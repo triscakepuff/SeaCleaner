@@ -11,7 +11,7 @@ public class HarpoonRope : MonoBehaviour
 
     private void Start()
     {
-        startPoint = GameObject.FindGameObjectWithTag("Player").transform;
+        startPoint = GameObject.FindGameObjectWithTag("Player").transform.Find("HarpoonHand").transform.Find("HarpoonArm").transform.Find("RopeStart").transform;
         
     }
 

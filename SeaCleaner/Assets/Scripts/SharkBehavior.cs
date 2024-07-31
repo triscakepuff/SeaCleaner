@@ -52,6 +52,11 @@ public class SharkBehavior : MonoBehaviour
     private float sizeX;
     private float sizeY;
 
+    private float fadeDuration = 2f;
+
+    public Sprite sharkAggro;
+    public Sprite sharkNotAggro;
+    public GameObject sharkAggroSign;
     void Start()
     {
         sizeY = transform.localScale.y;
@@ -85,6 +90,7 @@ public class SharkBehavior : MonoBehaviour
 
         if (!playerDetected)
         {
+            sprite.sprite = sharkNotAggro;
             rb2d.velocity = currentDirection * speedPatrol;
         }else if (playerDetected)
         {
@@ -92,11 +98,13 @@ public class SharkBehavior : MonoBehaviour
             int onCooldown;
             if (isChaseCooldown)
             {
+                sprite.sprite = sharkNotAggro;
                 onCooldown = 0;
             }
             else
             {
-                onCooldown= 1;
+                sprite.sprite = sharkAggro;
+                onCooldown = 1;
             }
             rb2d.velocity = currentDirection * speedAggro * onCooldown;
         }
@@ -301,8 +309,39 @@ public class SharkBehavior : MonoBehaviour
                 playerDetected = false;
             }
         }
+
+        if (playerDetected)
+        {
+            sharkAggroSign.SetActive(true);
+        }
+        else
+        {
+            sharkAggroSign.SetActive(false);
+        }
     }
 
+    public void DeathShark()
+    {
+        StartCoroutine(FadeOutCoroutine());
+    }
+
+    IEnumerator FadeOutCoroutine()
+    {
+        Color originalColor = sprite.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(originalColor.a, 0f, elapsedTime / fadeDuration);
+            sprite.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+
+        // Ensure the alpha is set to 0 after fading is complete
+        sprite.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+        Destroy(gameObject);
+    }
     void OnDrawGizmos()
     {
         // Draw the smaller sphere in the scene view for visualization purposes

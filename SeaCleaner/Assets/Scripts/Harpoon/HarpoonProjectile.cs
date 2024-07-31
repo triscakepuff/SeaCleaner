@@ -59,6 +59,10 @@ public class HarpoonProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Shark"))
+        {
+            collision.gameObject.GetComponent<SharkBehavior>().DeathShark();
+        }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Shark"))
         {
             hits = true;
