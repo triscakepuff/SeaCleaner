@@ -7,6 +7,8 @@ public class Notification : MonoBehaviour
     public Button myButton;
     public GameObject gameManager;
     private Tutorial canvasFunctions;
+
+    private bool isPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,7 @@ public class Notification : MonoBehaviour
         {
             myButton = GetComponent<Button>();
         }
+
         gameManager.SendMessage("Notification");
 
         canvasFunctions = GetComponentInParent<Tutorial>();
@@ -39,6 +42,6 @@ public class Notification : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

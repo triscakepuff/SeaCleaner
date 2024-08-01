@@ -30,10 +30,13 @@ public class Chest : MonoBehaviour
        
         if(targetObject != null && Input.GetKeyUp(KeyCode.Space) && !isOpened)
         {
+            FindFirstObjectByType<AudioManager>().Play("Opening Chest");
+
             if (isRandom)
             {
                 chestObject = Random.Range(0, 2);
             }
+
             anim.SetTrigger("Opened");
 
             if(chestObject == 0)

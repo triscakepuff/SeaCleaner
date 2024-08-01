@@ -226,7 +226,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ornamen 1_0: -6367037527773496061
+      ornamen 1_1: -1108408014132846119
+      ornamen 1_2: -1768214215345559748
+      ornamen 1_3: 7518692088567399703
+      ornamen 1_4: 3314507997418252317
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -43,6 +43,12 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Notification");
     }
+
+    void OpeningChest()
+    {
+        FindObjectOfType<AudioManager>().Play("Opening Chest");
+
+    }
     void WinCondition()
     {
         if(trashesObtained == 15)

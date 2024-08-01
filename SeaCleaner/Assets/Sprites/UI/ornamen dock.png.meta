@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ornamen dock_0: 6570067114514006414
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
