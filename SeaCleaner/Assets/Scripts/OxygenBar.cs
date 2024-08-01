@@ -36,7 +36,6 @@ public class OxygenBar : MonoBehaviour
     {
         SetOxygen();
         CheckOxygenPercentage();
-        Debug.Log(oxygenPercentage);
         if(currentOxygen > maxOxygen)
         {
             currentOxygen = maxOxygen;
