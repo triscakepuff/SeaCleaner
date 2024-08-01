@@ -6,14 +6,18 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    public GameObject player;
     [Header ("UI")]
     public GameObject trashesObtainedText;
+    public GameObject winScreen;
     public int trashesObtained;
     public int trashesNeeded;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         trashesObtainedText.GetComponent<TextMeshProUGUI>().text = trashesObtained.ToString();
+        rb = player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -43,9 +47,10 @@ public class GameManager : MonoBehaviour
     {
         if(trashesObtained == 15)
         {
-            Debug.Log("You Won!");
-            SceneManager.LoadScene("MainMenu");
+            winScreen.SetActive(true);
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
+    
 }

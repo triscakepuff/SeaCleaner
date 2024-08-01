@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SharkBehavior : MonoBehaviour
 {
+    [Header ("Player")]
+    public GameObject character;
     [Header("Detection Area")]
     public float smallSphereRadius = 5f;  // Radius of the smaller spherecast
     public float largeSphereRadius = 12f; // Radius of the larger spherecast
@@ -231,7 +233,7 @@ public class SharkBehavior : MonoBehaviour
 
         if (isRightDirection)
         {
-            // Right: 320° to 360° and 0° to 40°
+            // Right: 320ï¿½ to 360ï¿½ and 0ï¿½ to 40ï¿½
             float rightRange1 = Random.Range(320f, 360f);
             float rightRange2 = Random.Range(0f, 40f);
             
@@ -246,7 +248,7 @@ public class SharkBehavior : MonoBehaviour
         }
         else
         {
-            // Left: 120° to 200°
+            // Left: 120ï¿½ to 200ï¿½
             angle = Random.Range(120f, 200f);
         }
 
@@ -351,5 +353,13 @@ public class SharkBehavior : MonoBehaviour
         // Draw the larger sphere in the scene view for visualization purposes
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, largeSphereRadius);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.name == "Character")
+        {
+            character.SendMessage("Death");
+        }
     }
 }

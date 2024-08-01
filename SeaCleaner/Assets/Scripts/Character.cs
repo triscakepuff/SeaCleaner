@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Character : MonoBehaviour
 {
     public GameObject gameManager;
-
+    public GameObject gameOverScreen;
     public Vector2 startingPosition;
     private float time;
-    private bool isDead = false;
 
     [Header ("Movement")]
     public float swimSpeed = 10f;
@@ -48,11 +47,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         Swim();
-        if(isDead && Input.GetMouseButtonDown(0))
-        {
-            Respawn();
-            isDead = false;
-        }
 
         HarpoonCheck();
     }
@@ -157,16 +151,13 @@ public class Character : MonoBehaviour
     void Death()
     {
         time += Time.deltaTime;
+        
         if(time < 2f)
         {
-            isDead = true;
+            gameOverScreen.SetActive(true);
+            animator.SetTrigger("Death");
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            
         }
-    }
-
-    void Respawn()
-    {
-        transform.position = startingPosition;
-        rb.constraints &=  ~(RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation);
     }
 }
