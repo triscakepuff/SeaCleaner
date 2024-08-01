@@ -43,6 +43,7 @@ public class ChangeScene1 : MonoBehaviour
 
     public void LoadScene()
     {
+        Time.timeScale = 1f;
         if (useAnim)
         {
             StartCoroutine(waitForDur(1f));

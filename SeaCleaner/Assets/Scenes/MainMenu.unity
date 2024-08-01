@@ -6728,7 +6728,7 @@ MonoBehaviour:
     UpgradeSlot: 0
     UpgradeSpeed: 0
     UpgradeArrow: 0
-    UpgradeShield: 1
+    UpgradeShield: 0
     UpgradeOxygen: 0
 --- !u!4 &1336812274
 Transform:

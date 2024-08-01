@@ -112,5 +112,6 @@ public class ShopSlot : MonoBehaviour
                 Debug.Log("Error, incorrect id from ShopSlot");
             }
         }
+        saveManager.SaveGameData(saveManager.gameData);
     }
 }
