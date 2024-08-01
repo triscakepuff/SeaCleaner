@@ -36,6 +36,10 @@ public class OxygenBar : MonoBehaviour
     {
         SetOxygen();
         CheckOxygenPercentage();
+<<<<<<< Updated upstream
+=======
+        //Debug.Log(oxygenPercentage);
+>>>>>>> Stashed changes
         if(currentOxygen > maxOxygen)
         {
             currentOxygen = maxOxygen;

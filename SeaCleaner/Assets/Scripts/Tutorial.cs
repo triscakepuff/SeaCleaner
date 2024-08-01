@@ -15,88 +15,152 @@ public class Tutorial : MonoBehaviour
 
     public float durationTutorial;
 
-    public GameObject MoveTutorial;
+    [Header("BeginnerTutorial")]
+    public GameObject NotifButton;
+    public GameObject Phase1Tutorial;
+    public GameObject Phase2Tutorial;
+    public GameObject Phase3Tutorial;
     public GameObject TrashTutorial;
-    public GameObject BombTutorial;
-    public GameObject SharkTutorial;
-    public GameObject TreasureTutorial;
+    public GameObject DangerTutorial;
 
-    public GameObject Player;
+    [Header("TutorialButton")]
+    public GameObject Phase1Button;
+    public GameObject Phase2Button;
+    public GameObject Phase3Button;
+    public GameObject TrashButton;
+    public GameObject DangerButton;
 
 
-    private bool TrashTutor = true;
-    private bool BombTutor = true;
-    private bool SharkTutor = true;
-    private bool TreasureTutor = true;
+
+    // public GameObject MoveTutorial;
+    // public GameObject TrashTutorial;
+    // public GameObject ChestTutorial;
+    // public GameObject BombTutorial;
+    // public GameObject SharkTutorial;
+    // public GameObject TreasureTutorial;
+
+    //public GameObject Player;
+
+
+    // private bool TrashTutor = true;
+    // private bool BombTutor = true;
+    // private bool SharkTutor = true;
+    // private bool TreasureTutor = true;
   
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0f;
-        MoveTutorial.SetActive(true);
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Phase1Tutorial.SetActive(true);
+        Phase1Button.SetActive(true);
+        //Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Player.transform.position.x > posTrashL && Player.transform.position.x < posTrashR && TrashTutor)
-        {
-            TrashTutorial.SetActive(true);
-            Time.timeScale = 0f;
-        }
+        // if(Player.transform.position.x > posTrashL && Player.transform.position.x < posTrashR && TrashTutor)
+        // {
+        //     TrashTutorial.SetActive(true);
+        //     Time.timeScale = 0f;
+        // }
 
-        if (Player.transform.position.x > posBombL && Player.transform.position.x < posBombR && BombTutor)
-        {
-            BombTutorial.SetActive(true);
-            Time.timeScale = 0f;
-        }
+        // if (Player.transform.position.x > posBombL && Player.transform.position.x < posBombR && BombTutor)
+        // {
+        //     BombTutorial.SetActive(true);
+        //     Time.timeScale = 0f;
+        // }
 
-        if (Player.transform.position.x > posSharkL && Player.transform.position.x < posSharkR && SharkTutor)
-        {
-            SharkTutorial.SetActive(true);
-            Time.timeScale = 0f;
-        }
+        // if (Player.transform.position.x > posSharkL && Player.transform.position.x < posSharkR && SharkTutor)
+        // {
+        //     SharkTutorial.SetActive(true);
+        //     Time.timeScale = 0f;
+        // }
 
-        if (Player.transform.position.x > posTreasureL && Player.transform.position.x < posTreasureR && TreasureTutor)
-        {
-            TreasureTutorial.SetActive(true);
-            Time.timeScale = 0f;
-        }
+        // if (Player.transform.position.x > posTreasureL && Player.transform.position.x < posTreasureR && TreasureTutor)
+        // {
+        //     TreasureTutorial.SetActive(true);
+        //     Time.timeScale = 0f;
+        // }
     }
 
-    public void TurnOffMove()
+    public void TurnOffPhase1()
     {
-        MoveTutorial.SetActive(false);
+        Time.timeScale = 0f;
+        Phase1Tutorial.SetActive(false);
+        Phase1Button.SetActive(false);
+        Phase2Button.SetActive(true);
+        Phase2Tutorial.SetActive(true);
+        
+    }
+
+    public void TurnOffPhase2()
+    {
+        Time.timeScale = 0f;
+        Phase2Tutorial.SetActive(false);
+        Phase2Button.SetActive(false);
+        Phase3Tutorial.SetActive(true);
+        Phase3Button.SetActive(true);
+    }
+
+    public void TurnOffPhase3()
+    {
+        Phase3Tutorial.SetActive(false);
+        Phase3Button.SetActive(false);
         Time.timeScale = 1f;
+    }
+    // public void TurnOffMove()
+    // {
+    //     MoveTutorial.SetActive(false);
+    //     Time.timeScale = 1f;
+    // }
+    public void TurnOnTrash()
+    {
+        TrashTutorial.SetActive(true);
+        Time.timeScale = 0f;
+    
     }
 
     public void TurnOffTrash()
     {
         TrashTutorial.SetActive(false);
         Time.timeScale = 1f;
-        TrashTutor = false;
+        NotifButton.SetActive(false);
     }
 
-    public void TurnOffBomb()
+    public void TurnOnDanger()
     {
-        BombTutorial.SetActive(false);
-        Time.timeScale = 1f;
-        BombTutor = false;
+        DangerTutorial.SetActive(true);
+        Time.timeScale = 0f;
+    
     }
 
-    public void TurnOffShark()
+    public void TurnOffDanger()
     {
-        SharkTutorial.SetActive(false);
+        DangerTutorial.SetActive(false);
         Time.timeScale = 1f;
-        SharkTutor = false;
+        NotifButton.SetActive(false);
     }
 
-    public void TurnOffTreasure()
-    {
-        TreasureTutorial.SetActive(false);
-        Time.timeScale = 1f;
-        TreasureTutor = false;
-    }
+    // public void TurnOffBomb()
+    // {
+    //     BombTutorial.SetActive(false);
+    //     Time.timeScale = 1f;
+    //     BombTutor = false;
+    // }
+
+    // public void TurnOffShark()
+    // {
+    //     SharkTutorial.SetActive(false);
+    //     Time.timeScale = 1f;
+    //     SharkTutor = false;
+    // }
+
+    // public void TurnOffTreasure()
+    // {
+    //     TreasureTutorial.SetActive(false);
+    //     Time.timeScale = 1f;
+    //     TreasureTutor = false;
+    // }
 }

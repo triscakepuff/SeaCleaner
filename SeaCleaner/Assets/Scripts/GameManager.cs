@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header ("UI")]
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        WinCondition();
     }
 
     void TrashCount()
@@ -31,6 +33,19 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Bomb Explosion");
 
+    }
+
+    void Notification()
+    {
+        FindObjectOfType<AudioManager>().Play("Notification");
+    }
+    void WinCondition()
+    {
+        if(trashesObtained == 15)
+        {
+            Debug.Log("You Won!");
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
 }
