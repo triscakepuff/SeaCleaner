@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        trashesObtainedText.GetComponent<TextMeshProUGUI>().text = "Objective: Collect trash (" + trashesObtained.ToString() + "/" + trashesNeeded.ToString() + ")";
+        trashesObtainedText.GetComponent<TextMeshProUGUI>().text = trashesObtained.ToString();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void TrashCount()
     {
         trashesObtained++;
-        trashesObtainedText.GetComponent<TextMeshProUGUI>().text = "Objective: Collect trash (" + trashesObtained.ToString() + "/" + trashesNeeded.ToString() + ")";
+        trashesObtainedText.GetComponent<TextMeshProUGUI>().text = trashesObtained.ToString();
         FindObjectOfType<AudioManager>().Play("Trash Interact");
     }
 
