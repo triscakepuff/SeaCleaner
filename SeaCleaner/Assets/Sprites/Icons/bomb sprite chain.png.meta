@@ -126,6 +126,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bomb sprite chain_0
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 469
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84091e7d52dddd94488f83cd231f9358
+      internalID: -132878085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -137,6 +158,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      bomb sprite chain_0: -132878085
       bomb sprite chain_1: -4294915575793333486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
