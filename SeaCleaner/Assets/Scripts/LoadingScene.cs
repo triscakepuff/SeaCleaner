@@ -30,7 +30,6 @@ public class LoadingScene : MonoBehaviour
         fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
         fadeImage.gameObject.SetActive(true);
 
-
         // Start with fade out effect
 
         

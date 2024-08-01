@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      uhh kosong ig for die_0: -298069596719874978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

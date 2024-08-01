@@ -44,7 +44,7 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         Phase1Tutorial.SetActive(true);
         Phase1Button.SetActive(true);
         

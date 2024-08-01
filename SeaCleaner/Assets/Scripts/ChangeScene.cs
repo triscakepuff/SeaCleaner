@@ -13,6 +13,8 @@ public class ChangeScene1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("aaa");
+
         loadingScene = GameObject.FindFirstObjectByType<LoadingScene>();
 
         float waitDur;
