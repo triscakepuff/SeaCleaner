@@ -23,10 +23,18 @@ public class OxygenBar : MonoBehaviour
     public Sprite halfFull;
     public Sprite quarterFull;
     public Sprite none;
-    
+
+    private SaveManager saveManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        saveManager = GameObject.FindFirstObjectByType<SaveManager>();
+
+        for(int i = 0; i < saveManager.gameData.UpgradeOxygen; i++)
+        {
+            maxOxygen += 30;
+        }
+
         SetMaxOxygen();
         currentOxygen = maxOxygen;
     }
