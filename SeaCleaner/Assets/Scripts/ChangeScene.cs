@@ -10,6 +10,8 @@ public class ChangeScene1 : MonoBehaviour
     private LoadingScene loadingScene;
 
     public string sceneName;
+
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -14,8 +14,12 @@ public class GameManager : MonoBehaviour
     public int trashesNeeded;
     private Rigidbody2D rb;
 
+    private SaveManager saveManager;
+    public int CoinObtained;
+    public int NextLevel;
     private void Start()
     {
+        saveManager = FindFirstObjectByType<SaveManager>();
         trashesObtainedText.GetComponent<TextMeshProUGUI>().text = trashesObtained.ToString();
         rb = player.GetComponent<Rigidbody2D>();
     }
@@ -53,6 +57,10 @@ public class GameManager : MonoBehaviour
     {
         if(trashesObtained == 15)
         {
+            trashesObtained = 0;
+            saveManager.gameData.Money += CoinObtained;
+            saveManager.gameData.LevelProgress = NextLevel;
+            saveManager.SaveGameData(saveManager.gameData);
             winScreen.SetActive(true);
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
