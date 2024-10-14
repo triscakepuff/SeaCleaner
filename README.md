@@ -18,7 +18,7 @@ Itch.io : https://bgdc.itch.io/seacleaner
 <br>
 
 ## ▶️ Gameplay
-<img src="https://github.com/christophermrcl/christophermrcl/blob/main/img/seacleaner.gif">
+<img width="100%" src="https://github.com/christophermrcl/christophermrcl/blob/main/img/seacleaner.gif">
 
 <br>
 
