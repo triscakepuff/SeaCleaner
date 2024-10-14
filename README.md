@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100%" alt="main-image" src="">
+  <img width="100%" alt="main-image" src="https://github.com/christophermrcl/christophermrcl/blob/main/img/seacleanerbanner.png">
   </br>
 </p>
 
@@ -18,7 +18,7 @@ Itch.io : https://bgdc.itch.io/seacleaner
 <br>
 
 ## ▶️ Gameplay
-<img src="">
+<img src="https://github.com/christophermrcl/christophermrcl/blob/main/img/seacleaner.gif">
 
 <br>
 
