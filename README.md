@@ -32,6 +32,14 @@ Itch.io : https://bgdc.itch.io/seacleaner
 
 <br>
 
+## 📋Project Info
+|  | |
+| ------------------- | ------------------------------------------------------------ |
+| Unity Version | Unity 2023.2.11f1 |
+| Development Time | 2 months |
+
+<br>
+
 ## 📂Files description
 
 ```
@@ -95,8 +103,3 @@ The following controls are bound in-game, for gameplay and testing.
 | `TrashRandomSpawn.cs`  | Handles instantiation of trash object to be random. |
 | `Tutorial.cs`  | Handles all UI for tutorial. |
 
-
-<br>
-
-## 🔥Unity Version
-This game was developed using **Unity (2023.2.11f1)**.
